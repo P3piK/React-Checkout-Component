@@ -1,0 +1,36 @@
+.popularPanel {
+    width: 530px;
+    height: 180px;
+    background: #fff;
+    border: 2px solid #f3f3f3;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    padding: 20px 50px 35px 50px;
+}
+
+.popularItemList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popularItem {
+    float: left;
+    width: 140px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #f3f3f3;
+    border-radius: 5px;
+}
+
+.itemName {
+    margin-top: 0;
+    height: 18px;
+}
+
+.addButton {
+    height: 30px;
+    width: 90%;
+    margin-top: 20px;
+}

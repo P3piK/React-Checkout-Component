@@ -1,0 +1,70 @@
+.orderPanel {
+    background-color: #fff;
+    width:  300px;
+    border: 2px solid #f3f3f3;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 30px;
+}
+
+h4, h5 {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px;
+}
+
+
+.orderedItemList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.orderedItem {
+    border: 2px solid #F3F3F3;
+    border-radius: 5px;
+    height: 125px;
+    margin-bottom: 10px;
+    padding: 10px 0 0 20px;
+}
+
+.checkoutButton {
+    height: 50px;
+    width: inherit;
+    margin-top: 20px;
+}
+
+.quantityContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.quantity {
+    margin: auto 10px auto 10px;
+}
+
+.quantityButton {
+    background: #f3f3f3;
+    border: none;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.quantityButton:hover {
+    background: #9F9DB4;
+}
+
+.removeItemButton {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border: none;
+    background: white;
+}
+
+.removeItemButton:hover {
+    background: #F3F3F3;
+    border-radius: 5px;
+}

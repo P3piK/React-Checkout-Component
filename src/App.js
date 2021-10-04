@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import YourOrderPanel from './Components/YourOrderPanel.js'
+import PopularItemsPanel from './Components/PopularItemsPanel';
 import {data, basket} from './data'
 
 function App() {
@@ -9,59 +10,36 @@ function App() {
   const [itemList, setItemList] = useState(data);
 
   const updateQuantity = (id, quantity) => {
-    setBasketList([...basketList].map(i => 
-      {
-        if (quantity < 0)
-          return i;
-        if (i.id === id)
-        {
+    if (quantity === 0) {
+      setBasketList(basketList.filter(i => i.id !== id));
+    }
+    else {
+      setBasketList([...basketList].map(i => {
+        if (i.id === id) {
           return {
             ...i,
             quantity: quantity
           }
         }
         else return i;
-      }))
+      }));
+    }
   }
+
+  const addToBasket = (id) => {
+    setItemList(itemList.filter(i => i.id !== id));
+    setBasketList([...basketList, {
+      ...itemList.find(i => i.id === id), 
+      quantity: 1}]);
+  }
+
 
   return (
     <main>
-      <YourOrderPanel className="orderPanel" items={basketList} updateQuantity={updateQuantity} />
-
-
-      <PopularItemsPanel className="popularPanel" items={itemList} handleChange={setItemList} />
+      <PopularItemsPanel items={itemList} handleChange={addToBasket} />
+      <YourOrderPanel items={basketList} updateQuantity={updateQuantity} />
     </main>
   );
-}
-
-function PopularItemsPanel(props) {
-  return (
-    <>
-      <h4>Popular with your order ({props.items.length} items)</h4>
-      <PopularItemList className="popularItemList" itemList={props.items} />
-    </>
-  )
-}
-
-function PopularItemList(props) {
-  return (
-    <>
-      { props.itemList.map((item) => {
-          return <PopularItem key={item.id} className="popularItem" item={item} />
-      })} 
-    </>
-  )
-}
-
-function PopularItem(props) {
-  const {name, price} = props.item;
-
-  return (
-  <>
-    <h5>{name}</h5>
-    <h5>${price}</h5>
-    <button>+ Add to order</button>
-  </>);
 }
 
 export default App;

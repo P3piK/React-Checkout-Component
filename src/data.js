@@ -2,17 +2,17 @@ export const data = [
     {
         id: 0,
         name: 'Coca-Cola Without Sugar',
-        price: 3
+        price: 3.00
     },    
     {
         id: 1,
         name: 'Fanta Madness',
-        price: 3
+        price: 3.00
     },
     {
         id: 2,
         name: 'Coca-Cola With Sugar',
-        price: 3
+        price: 3.00
     }
 ];
 

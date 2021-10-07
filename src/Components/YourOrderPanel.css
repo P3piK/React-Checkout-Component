@@ -37,7 +37,6 @@ h4, h5 {
 
 .quantityContainer {
     display: flex;
-    margin-top: 20px;
 }
 
 .quantity {
@@ -47,12 +46,13 @@ h4, h5 {
 .quantityButton {
     background: #f3f3f3;
     border: none;
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
+    border-radius: 10em;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
 }
 
-.quantityButton:hover {
+.quantityButton:hover:enabled {
     background: #9F9DB4;
 }
 
@@ -62,6 +62,7 @@ h4, h5 {
     margin-right: 10px;
     border: none;
     background: white;
+    cursor: pointer;
 }
 
 .removeItemButton:hover {

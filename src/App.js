@@ -10,20 +10,19 @@ function App() {
   const [itemList, setItemList] = useState(data);
 
   const updateQuantity = (id, quantity) => {
-    if (quantity === 0) {
-      setBasketList(basketList.filter(i => i.id !== id));
-    }
-    else {
-      setBasketList([...basketList].map(i => {
-        if (i.id === id) {
-          return {
-            ...i,
-            quantity: quantity
-          }
+    setBasketList([...basketList].map(i => {
+      if (i.id === id) {
+        return {
+          ...i,
+          quantity: quantity
         }
-        else return i;
-      }));
-    }
+      }
+      else return i;
+    }));
+  }
+
+  const removeItem = (id) => {
+    setBasketList([...basketList].filter(i => i.id !== id))
   }
 
   const addToBasket = (id) => {
@@ -37,7 +36,7 @@ function App() {
   return (
     <main>
       <PopularItemsPanel items={itemList} handleChange={addToBasket} />
-      <YourOrderPanel items={basketList} updateQuantity={updateQuantity} />
+      <YourOrderPanel items={basketList} updateQuantity={updateQuantity} removeItem={removeItem} />
     </main>
   );
 }

@@ -13,6 +13,16 @@ export const data = [
         id: 2,
         name: 'Coca-Cola With Sugar',
         price: 3.00
+    },
+    {
+        id: 5,
+        name: 'Sprite',
+        price: 2.50
+    },
+    {
+        id: 6,
+        name: 'Coca-Cola With Lemon',
+        price: 3.60
     }
 ];
 

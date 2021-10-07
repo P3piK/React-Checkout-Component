@@ -1,5 +1,5 @@
 .popularPanel {
-    width: 530px;
+    width: 430px;
     height: 180px;
     background: #fff;
     border: 2px solid #f3f3f3;
@@ -7,12 +7,12 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 20px;
-    padding: 20px 50px 35px 50px;
+    padding: 20px 50px 25px 50px;
 }
 
 .popularItemList {
-    list-style-type: none;
-    padding: 0;
+    position: relative;
+    margin-top: 20px;
 }
 
 .popularItem {
@@ -33,4 +33,15 @@
     height: 30px;
     width: 90%;
     margin-top: 20px;
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-padding-left: 40px;
+    scroll-padding-right: 40px;
 }

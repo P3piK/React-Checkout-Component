@@ -20,8 +20,9 @@ main {
     border-radius: 3px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .button:hover {
-    background: #8873F7;    
+    background: #8873F7;
 }

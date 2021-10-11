@@ -24,6 +24,22 @@ function Arrow({
 }
 
 export function LeftArrow() {
+  return (
+    <PrevArrow className="left">
+      <i className="fas fa-arrow-circle-left"></i>
+    </PrevArrow>
+  )
+}
+
+export function TopArrow() {
+  return (
+    <PrevArrow className="top">
+      <i className="fas fa-arrow-circle-up"></i>
+    </PrevArrow>
+  )
+}
+
+function PrevArrow({children, className}) {
   const {
     // getItemById,
     getPrevItem,
@@ -54,13 +70,25 @@ export function LeftArrow() {
   };
 
   return (
-    <Arrow disabled={disabled} onClick={clickHandler}>
-      <i className="fas fa-arrow-circle-left"></i>
+    <Arrow disabled={disabled} onClick={clickHandler} className={className}>
+      {children}
     </Arrow>
   );
 }
 
 export function RightArrow() {
+  return (<NextArrow className="right">
+    <i className="fas fa-arrow-circle-right"></i>
+  </NextArrow>)
+}
+
+export function BottomArrow() {
+  return (<NextArrow className="bottom">
+    <i className="fas fa-arrow-circle-down"></i>
+  </NextArrow>)
+}
+
+function NextArrow({children, className}) {
   const {
     // getItemById,
     getNextItem,
@@ -90,8 +118,8 @@ export function RightArrow() {
   };
 
   return (
-    <Arrow disabled={disabled} onClick={clickHandler} className="right">
-      <i className="fas fa-arrow-circle-right"></i>
+    <Arrow disabled={disabled} onClick={clickHandler} className={className}>
+      {children}
     </Arrow>
   );
 }

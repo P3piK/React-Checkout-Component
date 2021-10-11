@@ -20,9 +20,12 @@ main {
     border-radius: 3px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.button:enabled {
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover:enabled {
     background: #8873F7;
 }

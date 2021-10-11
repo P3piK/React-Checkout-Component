@@ -1,12 +1,10 @@
 .arrow {
-    cursor: pointer;
     display: flex;
     justify-content: center;
     flex-direction: column;
     user-select: "none";
 
     position: absolute;
-    margin-top: 45px;
     z-index: 1;
     background: white;
     border: none;
@@ -16,20 +14,38 @@
     padding: 0;
 }
 
+.arrow:enabled {
+    cursor: pointer;
+}
+
 .arrow:hover {
     color: #84848C;
 }
 
 .left {
+    top: 45px;
     left: 0;
 }
 
 .right {
+    bottom: 45px;
     right: 0;
 }
 
+.top {
+    top: 0;
+    left: 50%;
+}
+
+.bottom {
+    bottom: 0;
+    left: 50%;
+}
+
 .fa-arrow-circle-right,
-.fa-arrow-circle-left {
+.fa-arrow-circle-left,
+.fa-arrow-circle-up,
+.fa-arrow-circle-down {
     font-size: 2em;
     padding: 0;
     margin: 0;

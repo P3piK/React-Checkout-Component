@@ -10,9 +10,14 @@
     padding: 20px 50px 25px 50px;
 }
 
-.popularItemList {
+.popularItemListWrapper {
     position: relative;
     margin-top: 20px;
+}
+
+.popularItemListContainer {
+    scroll-padding-left: 40px;
+    scroll-padding-right: 40px;
 }
 
 .popularItem {
@@ -42,6 +47,4 @@
 .react-horizontal-scrolling-menu--scroll-container {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    scroll-padding-left: 40px;
-    scroll-padding-right: 40px;
 }

@@ -16,13 +16,12 @@ function PopularItemsPanel(props) {
 }
   
 function PopularItemList(props) {
-    const [updateFlag, setUpdateFlag] = useState(false);
 
     return ( 
-        <div className="popularItemList">
+        <div className="popularItemListWrapper">
             <ScrollMenu LeftArrow={LeftArrow}
                         RightArrow={RightArrow}
-                        onScroll={() => setUpdateFlag(!updateFlag)}> 
+                        scrollContainerClassName="popularItemListContainer"> 
                 { props.itemList.map((item) => (
                     <PopularItemCard
                         item={item}
@@ -43,7 +42,9 @@ function PopularItemCard(props) {
     return (<div className="popularItem" style={{ opacity: visible ? "1" : "0.5" }}>
         <h5 className="itemName">{props.item.name}</h5>
         <h5 className="itemPrice">${props.item.price}</h5>
-        <button className="button addButton" onClick={() => props.handleChange(props.item.id)}>+ Add to order</button>
+        <button className="button addButton" 
+                onClick={() => props.handleChange(props.item.id)}
+                disabled={!visible}>+ Add to order</button>
     </div>);
 }
 

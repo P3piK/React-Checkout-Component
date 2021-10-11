@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import YourOrderPanel from './Components/YourOrderPanel.js'
+import { YourOrderPanel } from './Components/YourOrderPanel.js'
 import PopularItemsPanel from './Components/PopularItemsPanel';
 import {data, basket} from './data'
 

@@ -10,7 +10,7 @@ function PopularItemsPanel(props) {
     return (
       <div className="popularPanel" >
         <h4>Popular with your order ({props.items.length} items)</h4>
-        <PopularItemList itemList={props.items} handleChange={props.handleChange} />
+        <PopularItemList itemList={props.items} onAddToBasket={props.onAddToBasket} />
       </div>
     )
 }
@@ -27,7 +27,7 @@ function PopularItemList(props) {
                         item={item}
                         itemId={item.id} // NOTE: itemId is required for track items
                         key={item.id}
-                        handleChange={props.handleChange}
+                        onAddToBasket={props.onAddToBasket}
                     />
                 ))} 
             </ScrollMenu>
@@ -43,7 +43,7 @@ function PopularItemCard(props) {
         <h5 className="itemName">{props.item.name}</h5>
         <h5 className="itemPrice">${props.item.price}</h5>
         <button className="button addButton" 
-                onClick={() => props.handleChange(props.item.id)}
+                onClick={() => props.onAddToBasket(props.item.id)}
                 disabled={!visible}>+ Add to order</button>
     </div>);
 }

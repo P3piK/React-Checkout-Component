@@ -21,7 +21,7 @@ export function YourOrderPanel(props) {
     <div className="orderPanel" >
       <h3>Your order ({items.length} items)</h3>
 
-      <OrderedItemList items={items} updateQuantity={props.updateQuantity} removeItem={props.removeItem}/>
+      <OrderedItemList items={items} updateQuantity={props.onUpdateQuantity} removeItem={props.onRemoveItem}/>
 
       <h5>Subtotal<span>$ {sumPrice()}</span></h5>
       <h5>Delivery fee<span>{fee() === 0 ? 'Free' : '$ ' + fee()}</span></h5>
@@ -41,8 +41,8 @@ function OrderedItemList (props) {
           <OrderedItem key={item.id} 
                         itemId={item.id}
                         item={item}
-                        removeItem={props.removeItem}
-                        updateQuantity={props.updateQuantity} />
+                        removeItem={props.onRemoveItem}
+                        updateQuantity={props.onUpdateQuantity} />
         ))}
       </ScrollMenu>
     </div>);
@@ -56,15 +56,15 @@ function OrderedItem(props) {
   console.log(visibility.visibleItemsWithoutSeparators);
 
   return <div className="orderedItem" style={{ opacity: visible ? "1" : "0.5"}}>
-      <h4>{item.name}<button className="removeItemButton" onClick={() => props.removeItem(item.id)}>x</button></h4>
+      <h4>{item.name}<button className="removeItemButton" onClick={() => props.onRemoveItem(item.id)}>x</button></h4>
       <p>${item.price * item.quantity}</p>
       <div className="quantityContainer">
         <button className="quantityButton" 
-                onClick={() => props.updateQuantity(item.id, item.quantity - 1)}
+                onClick={() => props.onUpdateQuantity(item.id, item.quantity - 1)}
                 disabled={item.quantity === 1}>-</button>
         <h3 className="quantity">{item.quantity}</h3>
         <button className="quantityButton" 
-                onClick={() => props.updateQuantity(item.id, item.quantity + 1)}>+</button>
+                onClick={() => props.onUpdateQuantity(item.id, item.quantity + 1)}>+</button>
       </div>
   </div>
 }

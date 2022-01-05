@@ -2,7 +2,7 @@
 
 My very first project using React / HTML / CSS.
 
-I tried to create UI according to one's idea from:
+The UI according to one's idea from was created:
 https://www.uidesigndaily.com/posts/sketch-checkout-components-card-payment-day-1293
 
 ![image](https://user-images.githubusercontent.com/33731734/136807863-8247f9c5-7215-4976-8074-ca46e2bfd4c0.png)
@@ -16,7 +16,7 @@ And the result is as follows:
 
 ## Components
 
-In the project I reused `react-horizontal-scrolling-menu` component
+In the project the component `react-horizontal-scrolling-menu` was reused
 
 ```
 <ScrollMenu LeftArrow={TopArrow}
